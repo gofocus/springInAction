@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
- * 2016-10-25 15:41
+ * 2016-10-29
  */
 public class Spitter {
 
