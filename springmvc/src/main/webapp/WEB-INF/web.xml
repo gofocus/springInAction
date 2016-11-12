@@ -19,14 +19,6 @@
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:spring/springmvc.xml</param-value>
         </init-param>
-        <!--<init-param>-->
-            <!--<param-name>contextClass</param-name>-->
-            <!--<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>-->
-        <!--</init-param>-->
-        <!--<init-param>-->
-            <!--<param-name>contextConfigLocation</param-name>-->
-            <!--<param-value>cn.itcast.ssm.config.WebConfig</param-value>-->
-        <!--</init-param>-->
         <load-on-startup>1</load-on-startup>
     </servlet>
 

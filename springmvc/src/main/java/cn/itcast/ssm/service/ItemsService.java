@@ -16,4 +16,10 @@ public interface ItemsService {
      ItemsCustom findItemsById(Integer id);
 
      void updateItems(Integer id, ItemsCustom itemsCustom);
+
+     void deleteItems(Integer id);
+
+     void addItems(ItemsCustom itemsCustom);
+
+//     void updateItemsList(ItemsQueryVo itemsQueryVo);
 }

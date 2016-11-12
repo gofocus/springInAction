@@ -9,22 +9,36 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>查询商品列表</title>
+	<script type="text/javascript">
+		function deleteItems() {
+			document.itemsForm.action="${pageContext.request.contextPath }/items/deleteItems.action";
+			document.itemsForm.submit();
+		}
+		function queryItems() {
+			document.itemsForm.action="${pageContext.request.contextPath }/items/queryItems.action";
+			document.itemsForm.submit();
+		}
+	</script>
 </head>
 
 <body>
 
-<%--<a href="${pageContext.request.contextPath}/items/queryItems">返回查询页</a>--%>
-
-<form action="${pageContext.request.contextPath }/item/queryItem.action" method="post">
+<form name="itemsForm" action="${pageContext.request.contextPath }/items/queryItems.action" method="post">
 	查询条件：
 	<table width="20%" border=1>
 		<tr>
-			<td><input type="submit" value="查询"/></td>
+			<td>商品名称<label><input name="itemsCustom.name"/></label></td>
+			<td><input type="button" value="查询" onclick="queryItems()"/></td>
+			<td><input type="button" value="删除" onclick="deleteItems()"/></td>
 		</tr>
 	</table>
-	商品列表：
+
+	商品列表：<a href="${pageContext.request.contextPath}/items/editItemsQuery.action">批量修改</a>
+			<a href="${pageContext.request.contextPath}/items/addItems.action">增加商品</a>
+
 	<table width="100%" border=1>
 		<tr>
+			<td> </td>
 			<td>商品名称</td>
 			<td>商品价格</td>
 			<td>生产日期</td>
@@ -33,6 +47,7 @@
 		</tr>
 	<c:forEach items="${itemsList }" var="item">
 		<tr>
+			<td><label><input type="checkbox" name="items_id" value="${item.id}"/></label></td>
 			<td>${item.name }</td>
 			<td>${item.price }</td>
 			<td><fmt:formatDate value="${item.createtime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
